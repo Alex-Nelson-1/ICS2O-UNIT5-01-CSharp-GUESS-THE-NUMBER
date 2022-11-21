@@ -1,7 +1,7 @@
 // Created by: Alex Nelson
-// Created on: Oct 2022
+// Created on: Nov 2022
 //
-// This program calculates area of a triangle
+// This program allows you to guess a hidden number
 using System;
 
 class Program
@@ -9,19 +9,24 @@ class Program
     public static void Main(string[] args)
     {
         //Input
-        int length;
-        int width;
-        int area;
-        Console.WriteLine("This program calculates the area of a triangle");
+        int guessValue;
+     // Returns an `int` value greater in the range 1 <= value < 7
+        Random rd = new Random();
+        int randomNumber = rd.Next(1,7);
+        Console.WriteLine("This program allows you to guess a hidden number");
         Console.WriteLine("");
-        Console.WriteLine("Enter length in cm: ");
-        length = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Enter width in cm: ");
-        width = Convert.ToInt32(Console.ReadLine());
-        area = length * width / 2;
+        Console.WriteLine("Guess a number between 1 and 6: ");
+        guessValue = Convert.ToInt32(Console.ReadLine());
         //Output
         Console.WriteLine("");
-        Console.WriteLine("The area is: " + area + " cm²");
+        if(guessValue == randomNumber)
+            {
+                Console.WriteLine("Correct! " + randomNumber + " was the right number!" );
+            }
+        if(guessValue != randomNumber)
+            {
+                Console.WriteLine("incorrect! The correct number was " + randomNumber + ". Restart and try again!");
+            }
         Console.WriteLine("\nDone");
     }
 }
