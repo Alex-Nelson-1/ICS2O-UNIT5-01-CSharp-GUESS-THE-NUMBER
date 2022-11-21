@@ -10,7 +10,7 @@ class Program
     {
         //Input
         int guessValue;
-     // Returns an `int` value greater in the range 1 <= value < 7
+        //Returns an `int` value greater in the range 1 <= value <7
         Random rd = new Random();
         int randomNumber = rd.Next(1,7);
         Console.WriteLine("This program allows you to guess a hidden number");
